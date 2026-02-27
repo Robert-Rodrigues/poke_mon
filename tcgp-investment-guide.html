@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>TCGP Invest Guide 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:#FFD700;--gold2:#FFA500;--crown:#FFE55C;
+    --bg:#050A14;--bg2:#0A1628;--bg3:#0F1E38;
+    --text:#E8F4FF;--accent:#00D4FF;--accent2:#7B2FFF;
+    --red:#FF4757;--green:#2ED573;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;overflow-x:hidden;}
+  body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;
+    background-image:radial-gradient(1px 1px at 8% 18%,rgba(255,255,255,.7) 0%,transparent 100%),
+    radial-gradient(1px 1px at 28% 68%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 53% 33%,rgba(255,255,255,.8) 0%,transparent 100%),
+    radial-gradient(1px 1px at 73% 78%,rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 90% 12%,rgba(255,255,255,.7) 0%,transparent 100%),
+    radial-gradient(2px 2px at 60% 52%,rgba(0,212,255,.5) 0%,transparent 100%),
+    radial-gradient(2px 2px at 82% 28%,rgba(123,47,255,.5) 0%,transparent 100%);}
+
+  /* HERO */
+  .hero{position:relative;z-index:1;text-align:center;padding:36px 20px 22px;background:linear-gradient(180deg,rgba(123,47,255,.12) 0%,transparent 100%);}
+  .hero-badge{display:inline-block;background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:3px;padding:5px 16px;border-radius:20px;margin-bottom:12px;animation:pbadge 2s ease-in-out infinite;}
+  @keyframes pbadge{0%,100%{box-shadow:0 0 10px rgba(0,212,255,.4);}50%{box-shadow:0 0 25px rgba(0,212,255,.9);}}
+  .hero h1{font-family:'Orbitron',sans-serif;font-size:26px;font-weight:900;line-height:1.1;background:linear-gradient(135deg,var(--crown),var(--gold2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
+  .hero p{font-size:13px;color:rgba(232,244,255,.6);line-height:1.5;}
+  .coin-row{display:flex;justify-content:center;gap:8px;margin:14px 0;font-size:20px;animation:floaty 3s ease-in-out infinite;}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+
+  /* TABS */
+  .tabs{position:sticky;top:0;z-index:100;display:flex;background:rgba(5,10,20,.97);border-bottom:1px solid rgba(255,215,0,.2);backdrop-filter:blur(14px);overflow-x:auto;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{flex:1;min-width:72px;padding:12px 6px;text-align:center;font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:1px;color:rgba(232,244,255,.4);cursor:pointer;border-bottom:2px solid transparent;transition:all .3s;white-space:nowrap;}
+  .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+  .tab span{display:block;font-size:16px;margin-bottom:2px;}
+
+  /* SECTIONS */
+  .section{display:none;padding:18px 14px;position:relative;z-index:1;animation:fadeIn .35s ease;}
+  .section.active{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .section-title{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;}
+  .section-sub{font-size:12px;color:rgba(232,244,255,.45);margin-bottom:18px;}
+
+  /* GOLD TIP */
+  .gold-tip{background:linear-gradient(135deg,rgba(255,165,0,.12),rgba(255,215,0,.04));border:1px solid rgba(255,215,0,.4);border-radius:14px;padding:14px;margin-bottom:18px;position:relative;overflow:hidden;}
+  .gold-tip::after{content:'★';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:55px;opacity:.05;color:var(--gold);pointer-events:none;}
+  .gold-tip-title{font-family:'Orbitron',sans-serif;font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:6px;}
+  .gold-tip-text{font-size:13px;line-height:1.55;color:rgba(232,244,255,.8);}
+  .gold-tip-text strong{color:var(--gold);}
+
+  /* CARD */
+  .pcard{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid rgba(255,215,0,.12);border-radius:18px;margin-bottom:14px;overflow:hidden;cursor:pointer;position:relative;transition:box-shadow .3s;}
+  .pcard.crown{border-color:rgba(255,215,0,.5);animation:cglow 3s ease-in-out infinite;}
+  @keyframes cglow{0%,100%{box-shadow:0 0 12px rgba(255,215,0,.08);}50%{box-shadow:0 0 30px rgba(255,215,0,.25);}}
+  .pcard-header{display:flex;align-items:center;padding:14px;gap:12px;}
+
+  /* SVG CARD ART */
+  .card-art{width:72px;height:100px;flex-shrink:0;border-radius:10px;overflow:hidden;position:relative;box-shadow:0 4px 18px rgba(0,0,0,.6);}
+  .card-art svg{width:100%;height:100%;display:block;}
+  .card-art.crown-art::after{content:'';position:absolute;inset:0;border-radius:10px;background:linear-gradient(135deg,rgba(255,215,0,.25),transparent 50%,rgba(255,215,0,.12));pointer-events:none;animation:caglow 2.5s ease-in-out infinite;}
+  @keyframes caglow{0%,100%{opacity:.4;}50%{opacity:1;}}
+
+  /* Shimmer sweep on card art */
+  .card-art .shimmer{position:absolute;top:-50%;left:-60%;width:30%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:rotate(20deg);animation:sweep 3s ease-in-out infinite;}
+  @keyframes sweep{0%,70%{left:-60%;}100%{left:130%;}}
+
+  .pcard-info{flex:1;min-width:0;}
+  .pcard-name{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;color:var(--text);margin-bottom:5px;line-height:1.3;}
+  .badges{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px;}
+  .badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;letter-spacing:.5px;}
+  .badge.crown{background:rgba(255,215,0,.18);color:var(--gold);border:1px solid rgba(255,215,0,.4);}
+  .badge.meta{background:rgba(0,212,255,.12);color:var(--accent);border:1px solid rgba(0,212,255,.3);}
+  .badge.hot{background:rgba(255,71,87,.18);color:var(--red);border:1px solid rgba(255,71,87,.35);animation:phot 1.5s ease-in-out infinite;}
+  .badge.rare{background:rgba(123,47,255,.18);color:#B57BFF;border:1px solid rgba(123,47,255,.35);}
+  .badge.limited{background:rgba(46,213,115,.13);color:var(--green);border:1px solid rgba(46,213,115,.3);}
+  @keyframes phot{0%,100%{box-shadow:none;}50%{box-shadow:0 0 7px rgba(255,71,87,.5);}}
+  .pcard-set{font-size:10px;color:rgba(232,244,255,.38);}
+
+  .pcard-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0;}
+  .val-label{font-size:8px;color:rgba(232,244,255,.35);letter-spacing:1px;}
+  .val-stars{font-size:13px;color:var(--gold);}
+  .val-rank{font-size:10px;color:var(--green);font-weight:700;}
+  .val-rank.stable{color:var(--accent);}
+
+  .chevron{position:absolute;right:14px;top:14px;color:rgba(255,215,0,.4);font-size:13px;transition:transform .3s;}
+  .pcard.open .chevron{transform:rotate(180deg);}
+
+  .pcard-expand{display:none;padding:0 14px 16px;border-top:1px solid rgba(255,255,255,.05);}
+  .pcard.open .pcard-expand{display:block;animation:fadeIn .3s ease;}
+
+  /* BIG CARD in expand */
+  .expand-card-big{width:140px;display:block;margin:14px auto;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.6),0 0 22px rgba(255,215,0,.15);}
+  .expand-card-big svg{width:100%;height:auto;display:block;}
+
+  .drop-pill{display:inline-block;background:rgba(255,71,87,.13);color:var(--red);border:1px solid rgba(255,71,87,.3);border-radius:8px;padding:3px 10px;font-size:10px;font-family:'Orbitron',sans-serif;margin-bottom:10px;}
+  .expand-desc{font-size:13px;line-height:1.6;color:rgba(232,244,255,.72);margin-bottom:12px;}
+  .expand-desc strong{color:var(--text);}
+  .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px;}
+  .stat-box{background:rgba(255,255,255,.04);border-radius:10px;padding:9px;text-align:center;}
+  .stat-box .sl{font-size:9px;color:rgba(232,244,255,.35);letter-spacing:1px;margin-bottom:3px;}
+  .stat-box .sv{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;color:var(--crown);}
+  .tip-box{background:linear-gradient(135deg,rgba(0,212,255,.07),rgba(123,47,255,.07));border:1px solid rgba(0,212,255,.18);border-radius:10px;padding:10px 12px;font-size:12px;color:rgba(232,244,255,.75);line-height:1.5;}
+  .tip-box strong{color:var(--accent);}
+
+  /* STRATEGY */
+  .strat-card{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:16px;margin-bottom:12px;}
+  .strat-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .strat-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+  .strat-name{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;color:var(--text);margin-bottom:2px;}
+  .strat-sub{font-size:10px;color:rgba(232,244,255,.4);letter-spacing:.5px;}
+  .strat-desc{font-size:13px;line-height:1.6;color:rgba(232,244,255,.7);}
+  .pb-wrap{margin-top:10px;}
+  .pb-labels{display:flex;justify-content:space-between;font-size:10px;color:rgba(232,244,255,.45);margin-bottom:4px;}
+  .pb-track{height:5px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
+  .pb-fill{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+  .fill-gold{background:linear-gradient(90deg,var(--gold2),var(--crown));}
+  .fill-blue{background:linear-gradient(90deg,var(--accent2),var(--accent));}
+  .fill-red{background:linear-gradient(90deg,#FF4500,var(--red));}
+  .fill-green{background:linear-gradient(90deg,#00C851,var(--green));}
+
+  /* TIER */
+  .tier-row{display:flex;align-items:stretch;margin-bottom:8px;border-radius:10px;overflow:hidden;}
+  .tier-lbl{width:42px;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:15px;font-weight:900;flex-shrink:0;}
+  .tier-s .tier-lbl{background:linear-gradient(180deg,#FFD700,#FF8C00);color:#000;}
+  .tier-a .tier-lbl{background:linear-gradient(180deg,#FF4757,#C0392B);color:#fff;}
+  .tier-b .tier-lbl{background:linear-gradient(180deg,#7B2FFF,#5A189A);color:#fff;}
+  .tier-c .tier-lbl{background:linear-gradient(180deg,#2E86AB,#00BFFF);color:#fff;}
+  .tier-chips{flex:1;padding:8px 10px;background:rgba(255,255,255,.04);display:flex;flex-wrap:wrap;gap:5px;align-items:center;}
+  .chip{background:rgba(255,255,255,.07);border-radius:7px;padding:3px 9px;font-size:10px;font-weight:600;color:var(--text);}
+  .chip.gold{background:rgba(255,215,0,.14);color:var(--gold);}
+
+  .summary-row{display:flex;align-items:center;padding:13px;border-bottom:1px solid rgba(255,255,255,.05);}
+  .summary-row:last-child{border-bottom:none;}
+  .sr-icon{font-size:20px;margin-right:11px;}
+  .sr-lbl{font-family:'Orbitron',sans-serif;font-size:10px;margin-bottom:2px;}
+  .sr-desc{font-size:11px;color:rgba(232,244,255,.5);}
+  .sr-stars{font-family:'Orbitron',sans-serif;font-size:12px;color:var(--green);margin-left:auto;}
+
+  .scroll-hint{text-align:center;font-size:10px;color:rgba(232,244,255,.25);padding:8px;animation:blink 2s ease-in-out infinite;}
+  @keyframes blink{0%,100%{opacity:.3;}50%{opacity:.8;}}
+  .footer{text-align:center;padding:28px 16px;font-size:10px;color:rgba(232,244,255,.2);line-height:1.9;position:relative;z-index:1;}
+</style>
+</head>
+<body>
+
+<!-- SVG CARD TEMPLATES (inline, zero external deps) -->
+<!-- Each card is a stylized TCG-style SVG with the Pokemon art illustrated -->
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- MEWTWO -->
+    <symbol id="card-mewtwo" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#mg)"/>
+      <defs>
+        <radialGradient id="mg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#2a0050"/>
+          <stop offset="100%" stop-color="#0d001a"/>
+        </radialGradient>
+        <radialGradient id="mglow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#cc44ff" stop-opacity=".6"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <!-- gold frame -->
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+      <defs><linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFD700"/><stop offset="50%" stop-color="#FFF9C4"/><stop offset="100%" stop-color="#FFA500"/>
+      </linearGradient></defs>
+      <!-- energy glow -->
+      <ellipse cx="50" cy="65" rx="35" ry="35" fill="url(#mglow)"/>
+      <!-- Mewtwo body -->
+      <ellipse cx="50" cy="80" rx="18" ry="22" fill="#C0A0D0"/>
+      <!-- head -->
+      <ellipse cx="50" cy="52" rx="16" ry="14" fill="#B090C0"/>
+      <!-- eyes -->
+      <ellipse cx="44" cy="50" rx="3" ry="4" fill="#6600AA"/>
+      <ellipse cx="56" cy="50" rx="3" ry="4" fill="#6600AA"/>
+      <ellipse cx="44" cy="49" rx="1.5" ry="2" fill="#FF00FF" opacity=".8"/>
+      <ellipse cx="56" cy="49" rx="1.5" ry="2" fill="#FF00FF" opacity=".8"/>
+      <!-- tail -->
+      <path d="M60 90 Q78 85 75 70 Q72 60 68 65" fill="none" stroke="#B090C0" stroke-width="4" stroke-linecap="round"/>
+      <!-- tube/neck -->
+      <line x1="50" y1="60" x2="50" y2="66" stroke="#9070B0" stroke-width="5"/>
+      <!-- arms -->
+      <path d="M35 78 Q25 72 28 82" fill="none" stroke="#C0A0D0" stroke-width="4"/>
+      <path d="M65 78 Q75 72 72 82" fill="none" stroke="#C0A0D0" stroke-width="4"/>
+      <!-- type label -->
+      <rect x="25" y="118" width="50" height="14" rx="4" fill="rgba(102,0,170,.5)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#EE88FF" font-family="Arial" font-weight="bold">PSYCHIC · EX</text>
+      <!-- crown symbol -->
+      <text x="50" y="16" text-anchor="middle" font-size="11" fill="#FFD700">👑</text>
+      <!-- HP -->
+      <text x="80" y="28" text-anchor="middle" font-size="7" fill="#FFD700" font-family="Arial" font-weight="bold">200HP</text>
+      <!-- name -->
+      <text x="15" y="28" font-size="7" fill="#E8D0FF" font-family="Arial" font-weight="bold">Mewtwo ex</text>
+    </symbol>
+
+    <!-- CHARIZARD -->
+    <symbol id="card-charizard" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#chg)"/>
+      <defs>
+        <radialGradient id="chg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#3d0000"/>
+          <stop offset="100%" stop-color="#1a0500"/>
+        </radialGradient>
+        <radialGradient id="fireglow" cx="50%" cy="60%" r="50%">
+          <stop offset="0%" stop-color="#FF6600" stop-opacity=".7"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+      <!-- fire glow -->
+      <ellipse cx="50" cy="80" rx="38" ry="35" fill="url(#fireglow)"/>
+      <!-- fire at top of wings -->
+      <path d="M20 55 Q15 40 25 35 Q20 45 30 40 Q22 50 32 48" fill="#FF4400" opacity=".8"/>
+      <path d="M80 55 Q85 40 75 35 Q80 45 70 40 Q78 50 68 48" fill="#FF4400" opacity=".8"/>
+      <!-- wings -->
+      <path d="M50 70 Q20 50 15 30 Q35 40 45 60" fill="#FF8800" opacity=".9"/>
+      <path d="M50 70 Q80 50 85 30 Q65 40 55 60" fill="#FF8800" opacity=".9"/>
+      <!-- body -->
+      <ellipse cx="50" cy="85" rx="16" ry="18" fill="#FF6622"/>
+      <!-- head -->
+      <ellipse cx="50" cy="60" rx="13" ry="12" fill="#FF7733"/>
+      <!-- snout -->
+      <ellipse cx="54" cy="64" rx="5" ry="4" fill="#FF9966"/>
+      <!-- eyes -->
+      <ellipse cx="44" cy="58" rx="3" ry="3" fill="#33AAFF"/>
+      <ellipse cx="57" cy="58" rx="3" ry="3" fill="#33AAFF"/>
+      <circle cx="44" cy="58" r="1.5" fill="#003366"/>
+      <circle cx="57" cy="58" r="1.5" fill="#003366"/>
+      <!-- tail fire -->
+      <path d="M60 98 Q72 95 74 82 Q78 70 70 75" fill="none" stroke="#FF4400" stroke-width="4"/>
+      <ellipse cx="74" cy="70" rx="5" ry="7" fill="#FFAA00"/>
+      <ellipse cx="74" cy="68" rx="3" ry="5" fill="#FF4400"/>
+      <!-- chest -->
+      <ellipse cx="50" cy="87" rx="8" ry="7" fill="#FFB380"/>
+      <!-- type label -->
+      <rect x="25" y="118" width="50" height="14" rx="4" fill="rgba(170,30,0,.5)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#FFAA66" font-family="Arial" font-weight="bold">FIRE · EX</text>
+      <text x="50" y="16" text-anchor="middle" font-size="11" fill="#FFD700">👑</text>
+      <text x="80" y="28" text-anchor="middle" font-size="7" fill="#FFD700" font-family="Arial" font-weight="bold">330HP</text>
+      <text x="15" y="28" font-size="7" fill="#FFD0A0" font-family="Arial" font-weight="bold">Charizard ex</text>
+    </symbol>
+
+    <!-- PIKACHU -->
+    <symbol id="card-pikachu" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#pkg)"/>
+      <defs>
+        <radialGradient id="pkg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#2a2000"/>
+          <stop offset="100%" stop-color="#0d0a00"/>
+        </radialGradient>
+        <radialGradient id="elecglow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#FFEE00" stop-opacity=".6"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+      <ellipse cx="50" cy="75" rx="36" ry="36" fill="url(#elecglow)"/>
+      <!-- lightning bolts bg -->
+      <path d="M20 35 L25 50 L18 50 L27 68" fill="none" stroke="#FFDD00" stroke-width="1.5" opacity=".4"/>
+      <path d="M75 35 L70 50 L77 50 L68 68" fill="none" stroke="#FFDD00" stroke-width="1.5" opacity=".4"/>
+      <!-- Pikachu ears -->
+      <path d="M35 52 L30 28 L42 45 Z" fill="#FFD700"/>
+      <path d="M30 28 L38 30 L42 45 Z" fill="#1a1a1a"/>
+      <path d="M65 52 L70 28 L58 45 Z" fill="#FFD700"/>
+      <path d="M70 28 L62 30 L58 45 Z" fill="#1a1a1a"/>
+      <!-- body -->
+      <ellipse cx="50" cy="90" rx="20" ry="22" fill="#FFD700"/>
+      <!-- head -->
+      <ellipse cx="50" cy="63" rx="18" ry="16" fill="#FFDD22"/>
+      <!-- cheeks -->
+      <ellipse cx="34" cy="69" rx="6" ry="5" fill="#FF4488" opacity=".9"/>
+      <ellipse cx="66" cy="69" rx="6" ry="5" fill="#FF4488" opacity=".9"/>
+      <!-- eyes -->
+      <ellipse cx="43" cy="60" rx="4" ry="4.5" fill="#1a1a1a"/>
+      <ellipse cx="57" cy="60" rx="4" ry="4.5" fill="#1a1a1a"/>
+      <circle cx="44" cy="59" r="1.5" fill="white"/>
+      <circle cx="58" cy="59" r="1.5" fill="white"/>
+      <!-- nose & mouth -->
+      <ellipse cx="50" cy="66" rx="2" ry="1.5" fill="#8B5500"/>
+      <path d="M45 70 Q50 74 55 70" fill="none" stroke="#8B5500" stroke-width="1.5"/>
+      <!-- tail -->
+      <path d="M68 96 Q82 88 80 75 Q78 65 72 70" fill="#FFD700" stroke="#FFD700" stroke-width="3"/>
+      <path d="M72 70 Q78 58 85 60 Q80 65 78 75" fill="#FFD700"/>
+      <!-- stripes on back -->
+      <path d="M38 90 Q50 92 62 90" fill="none" stroke="#BB8800" stroke-width="2.5" opacity=".5"/>
+      <path d="M36 96 Q50 99 64 96" fill="none" stroke="#BB8800" stroke-width="2.5" opacity=".5"/>
+      <!-- type label -->
+      <rect x="25" y="118" width="50" height="14" rx="4" fill="rgba(120,100,0,.5)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#FFEE66" font-family="Arial" font-weight="bold">ELECTRIC · EX</text>
+      <text x="50" y="16" text-anchor="middle" font-size="11" fill="#FFD700">👑</text>
+      <text x="80" y="28" text-anchor="middle" font-size="7" fill="#FFD700" font-family="Arial" font-weight="bold">120HP</text>
+      <text x="15" y="28" font-size="7" fill="#FFEE88" font-family="Arial" font-weight="bold">Pikachu ex</text>
+    </symbol>
+
+    <!-- DIALGA -->
+    <symbol id="card-dialga" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#dg)"/>
+      <defs>
+        <radialGradient id="dg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#001a3d"/>
+          <stop offset="100%" stop-color="#000812"/>
+        </radialGradient>
+        <radialGradient id="steelglow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#4488FF" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+      <ellipse cx="50" cy="72" rx="36" ry="36" fill="url(#steelglow)"/>
+      <!-- Dialga body - large dragon form -->
+      <ellipse cx="50" cy="85" rx="22" ry="25" fill="#3366CC"/>
+      <!-- neck/head -->
+      <ellipse cx="50" cy="55" rx="14" ry="16" fill="#2255BB"/>
+      <!-- head fin -->
+      <path d="M40 44 L37 28 L50 40 Z" fill="#88AAFF"/>
+      <path d="M60 44 L63 28 L50 40 Z" fill="#88AAFF"/>
+      <!-- diamond on chest -->
+      <path d="M50 78 L44 86 L50 94 L56 86 Z" fill="#AADDFF" stroke="#66BBFF" stroke-width="1"/>
+      <!-- time lines on diamond -->
+      <line x1="44" y1="86" x2="56" y2="86" stroke="#3399FF" stroke-width="1"/>
+      <line x1="50" y1="78" x2="50" y2="94" stroke="#3399FF" stroke-width="1"/>
+      <!-- eyes -->
+      <ellipse cx="44" cy="52" rx="3.5" ry="4" fill="#FF0000"/>
+      <ellipse cx="56" cy="52" rx="3.5" ry="4" fill="#FF0000"/>
+      <circle cx="44" cy="52" r="1.5" fill="#660000"/>
+      <circle cx="56" cy="52" r="1.5" fill="#660000"/>
+      <!-- legs -->
+      <rect x="34" y="103" width="10" height="14" rx="3" fill="#2244AA"/>
+      <rect x="56" y="103" width="10" height="14" rx="3" fill="#2244AA"/>
+      <!-- shoulder plates -->
+      <path d="M30 75 Q20 68 22 80 Q28 82 32 78" fill="#4477DD"/>
+      <path d="M70 75 Q80 68 78 80 Q72 82 68 78" fill="#4477DD"/>
+      <!-- type label -->
+      <rect x="22" y="118" width="56" height="14" rx="4" fill="rgba(0,30,100,.5)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#88CCFF" font-family="Arial" font-weight="bold">STEEL/DRAGON EX</text>
+      <text x="50" y="16" text-anchor="middle" font-size="11" fill="#FFD700">👑</text>
+      <text x="80" y="28" text-anchor="middle" font-size="7" fill="#FFD700" font-family="Arial" font-weight="bold">240HP</text>
+      <text x="12" y="28" font-size="7" fill="#AACCFF" font-family="Arial" font-weight="bold">Dialga ex</text>
+    </symbol>
+
+    <!-- MEW -->
+    <symbol id="card-mew" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#mewg)"/>
+      <defs>
+        <radialGradient id="mewg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#1a0030"/>
+          <stop offset="100%" stop-color="#0a001a"/>
+        </radialGradient>
+        <radialGradient id="mewglow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#FF88FF" stop-opacity=".6"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <!-- 3-star border -->
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="url(#rainbow-grad)" stroke-width="2.5"/>
+      <defs><linearGradient id="rainbow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FF00FF"/>
+        <stop offset="33%" stop-color="#00FFFF"/>
+        <stop offset="66%" stop-color="#FFFF00"/>
+        <stop offset="100%" stop-color="#FF00FF"/>
+      </linearGradient></defs>
+      <ellipse cx="50" cy="72" rx="38" ry="40" fill="url(#mewglow)"/>
+      <!-- stars in bg -->
+      <text x="15" y="40" font-size="8" fill="#FF88FF" opacity=".6">✦</text>
+      <text x="75" y="55" font-size="6" fill="#FF88FF" opacity=".5">✦</text>
+      <text x="25" y="100" font-size="5" fill="#FF88FF" opacity=".4">✦</text>
+      <text x="80" y="95" font-size="7" fill="#FF88FF" opacity=".5">✦</text>
+      <!-- Mew body -->
+      <ellipse cx="50" cy="82" rx="14" ry="16" fill="#FFB3FF"/>
+      <!-- head -->
+      <ellipse cx="50" cy="62" rx="16" ry="14" fill="#FFCCFF"/>
+      <!-- big ears -->
+      <ellipse cx="38" cy="50" rx="5" ry="9" fill="#FFB3FF" transform="rotate(-15 38 50)"/>
+      <ellipse cx="38" cy="50" rx="3" ry="6" fill="#FF88DD" transform="rotate(-15 38 50)"/>
+      <ellipse cx="62" cy="50" rx="5" ry="9" fill="#FFB3FF" transform="rotate(15 62 50)"/>
+      <ellipse cx="62" cy="50" rx="3" ry="6" fill="#FF88DD" transform="rotate(15 62 50)"/>
+      <!-- eyes (large cute) -->
+      <ellipse cx="43" cy="62" rx="5" ry="5.5" fill="#1a0040"/>
+      <ellipse cx="57" cy="62" rx="5" ry="5.5" fill="#1a0040"/>
+      <circle cx="44" cy="60.5" r="2" fill="white"/>
+      <circle cx="58" cy="60.5" r="2" fill="white"/>
+      <!-- nose -->
+      <ellipse cx="50" cy="68" rx="2" ry="1.5" fill="#FF66BB"/>
+      <!-- tail -->
+      <path d="M60 94 Q78 88 80 75 Q82 62 72 66 Q78 72 72 78 Q68 82 62 84" fill="none" stroke="#FFB3FF" stroke-width="5" stroke-linecap="round"/>
+      <!-- paws -->
+      <ellipse cx="40" cy="95" rx="6" ry="4" fill="#FFCCFF"/>
+      <ellipse cx="60" cy="95" rx="6" ry="4" fill="#FFCCFF"/>
+      <!-- type label -->
+      <rect x="20" y="118" width="60" height="14" rx="4" fill="rgba(100,0,100,.5)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#FFAAFF" font-family="Arial" font-weight="bold">PSYCHIC · IMERSIVA ✦✦✦</text>
+      <text x="80" y="28" text-anchor="middle" font-size="7" fill="#FF88FF" font-family="Arial" font-weight="bold">150HP</text>
+      <text x="10" y="28" font-size="7" fill="#FFCCFF" font-family="Arial" font-weight="bold">Mew ex</text>
+    </symbol>
+
+    <!-- CHARIZARD SHINY -->
+    <symbol id="card-shiny" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#shg)"/>
+      <defs>
+        <radialGradient id="shg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#001a2a"/>
+          <stop offset="100%" stop-color="#00050d"/>
+        </radialGradient>
+        <radialGradient id="shinyglow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#00DDFF" stop-opacity=".6"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="url(#shiny-grad)" stroke-width="2.5"/>
+      <defs><linearGradient id="shiny-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00FFFF"/>
+        <stop offset="50%" stop-color="#AAFFFF"/>
+        <stop offset="100%" stop-color="#0088FF"/>
+      </linearGradient></defs>
+      <ellipse cx="50" cy="80" rx="38" ry="35" fill="url(#shinyglow)"/>
+      <!-- sparkle stars -->
+      <text x="12" y="38" font-size="10" fill="#00FFFF" opacity=".7">✦</text>
+      <text x="78" y="45" font-size="8" fill="#00FFFF" opacity=".6">✦</text>
+      <text x="20" y="108" font-size="7" fill="#00FFFF" opacity=".5">✦</text>
+      <!-- Shiny Charizard (black/teal) -->
+      <path d="M50 70 Q20 50 15 30 Q35 40 45 60" fill="#003344" opacity=".9"/>
+      <path d="M50 70 Q80 50 85 30 Q65 40 55 60" fill="#003344" opacity=".9"/>
+      <!-- body -->
+      <ellipse cx="50" cy="85" rx="16" ry="18" fill="#112233"/>
+      <!-- head -->
+      <ellipse cx="50" cy="60" rx="13" ry="12" fill="#1a3344"/>
+      <!-- snout -->
+      <ellipse cx="54" cy="64" rx="5" ry="4" fill="#2a4455"/>
+      <!-- eyes - blue glowing -->
+      <ellipse cx="44" cy="58" rx="3" ry="3" fill="#00AAFF"/>
+      <ellipse cx="57" cy="58" rx="3" ry="3" fill="#00AAFF"/>
+      <circle cx="44" cy="57.5" r="1.5" fill="#AAFFFF"/>
+      <circle cx="57" cy="57.5" r="1.5" fill="#AAFFFF"/>
+      <!-- teal tail fire -->
+      <path d="M60 98 Q72 95 74 82 Q78 70 70 75" fill="none" stroke="#006688" stroke-width="4"/>
+      <ellipse cx="74" cy="70" rx="5" ry="7" fill="#00AACC"/>
+      <ellipse cx="74" cy="68" rx="3" ry="5" fill="#00DDFF"/>
+      <!-- chest -->
+      <ellipse cx="50" cy="87" rx="8" ry="7" fill="#224455"/>
+      <!-- SHINY badge -->
+      <rect x="28" y="105" width="44" height="10" rx="3" fill="rgba(0,100,150,.6)"/>
+      <text x="50" y="113" text-anchor="middle" font-size="7" fill="#00FFFF" font-family="Arial" font-weight="bold">✦ SHINY ✦</text>
+      <!-- type label -->
+      <rect x="22" y="118" width="56" height="14" rx="4" fill="rgba(0,50,80,.6)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#88EEFF" font-family="Arial" font-weight="bold">FIRE · SHINING REVELRY</text>
+      <text x="78" y="28" text-anchor="middle" font-size="7" fill="#00DDFF" font-family="Arial" font-weight="bold">330HP</text>
+      <text x="10" y="28" font-size="6" fill="#88EEFF" font-family="Arial" font-weight="bold">Charizard ★</text>
+    </symbol>
+
+    <!-- SUICUNE -->
+    <symbol id="card-suicune" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#sug)"/>
+      <defs>
+        <radialGradient id="sug" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#001533"/>
+          <stop offset="100%" stop-color="#00040d"/>
+        </radialGradient>
+        <radialGradient id="waterglow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#0088FF" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="#4499FF" stroke-width="1.5"/>
+      <ellipse cx="50" cy="72" rx="36" ry="36" fill="url(#waterglow)"/>
+      <!-- water ripples bg -->
+      <ellipse cx="50" cy="105" rx="30" ry="8" fill="none" stroke="#0066BB" stroke-width="1" opacity=".4"/>
+      <ellipse cx="50" cy="108" rx="22" ry="5" fill="none" stroke="#0066BB" stroke-width="1" opacity=".3"/>
+      <!-- Suicune ribbon tails -->
+      <path d="M50 70 Q25 60 15 40 Q25 55 35 60" fill="#9944FF" opacity=".8"/>
+      <path d="M50 70 Q75 60 85 40 Q75 55 65 60" fill="#9944FF" opacity=".8"/>
+      <path d="M50 80 Q20 90 10 110 Q25 95 40 92" fill="#7722DD" opacity=".7"/>
+      <!-- body -->
+      <ellipse cx="50" cy="82" rx="15" ry="18" fill="#0077CC"/>
+      <!-- neck -->
+      <rect x="44" y="65" width="12" height="14" rx="4" fill="#0088DD"/>
+      <!-- head -->
+      <ellipse cx="50" cy="60" rx="14" ry="12" fill="#0099EE"/>
+      <!-- head diamond/crown -->
+      <path d="M50 47 L45 53 L50 50 L55 53 Z" fill="#FF4444"/>
+      <!-- mane -->
+      <path d="M38 55 Q32 48 38 42 Q42 52 44 56" fill="#9944FF"/>
+      <path d="M62 55 Q68 48 62 42 Q58 52 56 56" fill="#9944FF"/>
+      <!-- eyes (red) -->
+      <ellipse cx="43" cy="58" rx="3" ry="3.5" fill="#CC0000"/>
+      <ellipse cx="57" cy="58" rx="3" ry="3.5" fill="#CC0000"/>
+      <circle cx="43" cy="57.5" r="1" fill="#FF4444"/>
+      <circle cx="57" cy="57.5" r="1" fill="#FF4444"/>
+      <!-- white nose streaks -->
+      <path d="M44 63 L46 66 L50 64 L54 66 L56 63" fill="none" stroke="white" stroke-width="1" opacity=".8"/>
+      <!-- legs -->
+      <rect x="36" y="95" width="9" height="14" rx="3" fill="#0066BB"/>
+      <rect x="55" y="95" width="9" height="14" rx="3" fill="#0066BB"/>
+      <!-- type label -->
+      <rect x="22" y="118" width="56" height="14" rx="4" fill="rgba(0,40,100,.5)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#88CCFF" font-family="Arial" font-weight="bold">WATER · EX</text>
+      <text x="80" y="28" text-anchor="middle" font-size="7" fill="#88CCFF" font-family="Arial" font-weight="bold">200HP</text>
+      <text x="12" y="28" font-size="7" fill="#AADDFF" font-family="Arial" font-weight="bold">Suicune ex</text>
+    </symbol>
+
+    <!-- HYDREIGON -->
+    <symbol id="card-hydreigon" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#hyg)"/>
+      <defs>
+        <radialGradient id="hyg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#0a0020"/>
+          <stop offset="100%" stop-color="#030008"/>
+        </radialGradient>
+        <radialGradient id="darkglow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#6600CC" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="#6633CC" stroke-width="1.5"/>
+      <ellipse cx="50" cy="72" rx="36" ry="36" fill="url(#darkglow)"/>
+      <!-- bat wings -->
+      <path d="M50 75 Q18 55 10 28 Q30 48 42 65" fill="#220044" opacity=".9"/>
+      <path d="M50 75 Q82 55 90 28 Q70 48 58 65" fill="#220044" opacity=".9"/>
+      <!-- wing membrane details -->
+      <path d="M50 75 Q25 60 15 35" fill="none" stroke="#440077" stroke-width="1.5"/>
+      <path d="M50 75 Q75 60 85 35" fill="none" stroke="#440077" stroke-width="1.5"/>
+      <!-- body -->
+      <ellipse cx="50" cy="88" rx="15" ry="16" fill="#2a0055"/>
+      <!-- main head -->
+      <ellipse cx="50" cy="65" rx="13" ry="11" fill="#330066"/>
+      <!-- two mini heads on sides -->
+      <ellipse cx="30" cy="75" rx="8" ry="7" fill="#220055"/>
+      <ellipse cx="70" cy="75" rx="8" ry="7" fill="#220055"/>
+      <!-- mini head eyes -->
+      <ellipse cx="27" cy="73" rx="2" ry="2.5" fill="#FF0066"/>
+      <ellipse cx="33" cy="73" rx="2" ry="2.5" fill="#FF0066"/>
+      <ellipse cx="67" cy="73" rx="2" ry="2.5" fill="#FF0066"/>
+      <ellipse cx="73" cy="73" rx="2" ry="2.5" fill="#FF0066"/>
+      <!-- main eyes -->
+      <ellipse cx="43" cy="63" rx="3.5" ry="4" fill="#FF0066"/>
+      <ellipse cx="57" cy="63" rx="3.5" ry="4" fill="#FF0066"/>
+      <circle cx="43" cy="62.5" r="1.5" fill="white"/>
+      <circle cx="57" cy="62.5" r="1.5" fill="white"/>
+      <!-- type label -->
+      <rect x="20" y="118" width="60" height="14" rx="4" fill="rgba(40,0,80,.6)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#BB88FF" font-family="Arial" font-weight="bold">DARK/DRAGON</text>
+      <text x="78" y="28" text-anchor="middle" font-size="7" fill="#BB88FF" font-family="Arial" font-weight="bold">180HP</text>
+      <text x="10" y="28" font-size="7" fill="#CC99FF" font-family="Arial" font-weight="bold">Hydreigon</text>
+    </symbol>
+
+    <!-- ALTARIA -->
+    <symbol id="card-altaria" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#altg)"/>
+      <defs>
+        <radialGradient id="altg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#001533"/>
+          <stop offset="100%" stop-color="#00040f"/>
+        </radialGradient>
+        <radialGradient id="cloudglow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#AADDFF" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="#88CCFF" stroke-width="1.5"/>
+      <ellipse cx="50" cy="72" rx="36" ry="36" fill="url(#cloudglow)"/>
+      <!-- Mega Altaria cloud wings -->
+      <ellipse cx="22" cy="70" rx="18" ry="14" fill="white" opacity=".9"/>
+      <ellipse cx="78" cy="70" rx="18" ry="14" fill="white" opacity=".9"/>
+      <ellipse cx="15" cy="65" rx="12" ry="9" fill="white" opacity=".8"/>
+      <ellipse cx="85" cy="65" rx="12" ry="9" fill="white" opacity=".8"/>
+      <!-- cloud puffs -->
+      <ellipse cx="22" cy="63" rx="10" ry="9" fill="white"/>
+      <ellipse cx="78" cy="63" rx="10" ry="9" fill="white"/>
+      <ellipse cx="17" cy="72" rx="8" ry="7" fill="white"/>
+      <ellipse cx="83" cy="72" rx="8" ry="7" fill="white"/>
+      <!-- body -->
+      <ellipse cx="50" cy="82" rx="12" ry="14" fill="#338FFF"/>
+      <!-- neck -->
+      <rect x="46" y="68" width="8" height="12" rx="3" fill="#4499FF"/>
+      <!-- head -->
+      <ellipse cx="50" cy="62" rx="11" ry="10" fill="#55AAFF"/>
+      <!-- head tuft -->
+      <ellipse cx="50" cy="52" rx="8" ry="6" fill="white"/>
+      <ellipse cx="44" cy="50" rx="5" ry="5" fill="white"/>
+      <ellipse cx="56" cy="50" rx="5" ry="5" fill="white"/>
+      <!-- eyes -->
+      <ellipse cx="44" cy="61" rx="3" ry="3.5" fill="#1a1a1a"/>
+      <ellipse cx="56" cy="61" rx="3" ry="3.5" fill="#1a1a1a"/>
+      <circle cx="44" cy="60" r="1.5" fill="white"/>
+      <circle cx="56" cy="60" r="1.5" fill="white"/>
+      <!-- beak -->
+      <path d="M47 67 L50 71 L53 67" fill="#FFAA00"/>
+      <!-- type label -->
+      <rect x="20" y="118" width="60" height="14" rx="4" fill="rgba(0,40,100,.5)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#AADDFF" font-family="Arial" font-weight="bold">DRAGON/FAIRY EX</text>
+      <text x="78" y="28" text-anchor="middle" font-size="7" fill="#88CCFF" font-family="Arial" font-weight="bold">200HP</text>
+      <text x="10" y="28" font-size="6" fill="#CCEEFF" font-family="Arial" font-weight="bold">Mega Altaria ex</text>
+    </symbol>
+
+    <!-- 30 ANOS EVENT -->
+    <symbol id="card-event" viewBox="0 0 100 140">
+      <rect width="100" height="140" rx="6" fill="url(#evg)"/>
+      <defs>
+        <radialGradient id="evg" cx="50%" cy="40%" r="70%">
+          <stop offset="0%" stop-color="#1a1000"/>
+          <stop offset="100%" stop-color="#080500"/>
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="96" height="136" rx="5" fill="none" stroke="url(#rainbow-grad)" stroke-width="2.5"/>
+      <!-- festive background -->
+      <text x="15" y="45" font-size="14" opacity=".3">🎉</text>
+      <text x="65" y="42" font-size="10" opacity=".3">✨</text>
+      <text x="20" y="95" font-size="10" opacity=".3">🎊</text>
+      <text x="72" y="98" font-size="12" opacity=".3">🎈</text>
+      <!-- "30" big text centerpiece -->
+      <text x="50" y="82" text-anchor="middle" font-size="46" fill="url(#gold-grad)" font-family="Arial" font-weight="900" opacity=".9">30</text>
+      <!-- ANOS label -->
+      <rect x="28" y="84" width="44" height="13" rx="4" fill="rgba(200,150,0,.3)"/>
+      <text x="50" y="94" text-anchor="middle" font-size="9" fill="#FFD700" font-family="Arial" font-weight="bold">ANOS POKÉMON</text>
+      <!-- Pokéball icon -->
+      <circle cx="50" cy="55" r="12" fill="none" stroke="#FFD700" stroke-width="2"/>
+      <path d="M38 55 Q50 47 62 55" fill="#FF4444"/>
+      <path d="M38 55 Q50 63 62 55" fill="white"/>
+      <circle cx="50" cy="55" r="4" fill="white" stroke="#FFD700" stroke-width="1.5"/>
+      <line x1="38" y1="55" x2="62" y2="55" stroke="#FFD700" stroke-width="1"/>
+      <!-- type label -->
+      <rect x="15" y="118" width="70" height="14" rx="4" fill="rgba(100,80,0,.5)"/>
+      <text x="50" y="128" text-anchor="middle" font-size="7" fill="#FFE066" font-family="Arial" font-weight="bold">EVENTO LIMITADO 2026</text>
+      <text x="50" y="28" text-anchor="middle" font-size="7" fill="#FFEE66" font-family="Arial" font-weight="bold">EXCLUSIVO</text>
+    </symbol>
+
+  </defs>
+</svg>
+
+<!-- ===================== PAGE ===================== -->
+
+<div class="hero">
+  <div class="hero-badge">GUIA 2026 · ATUALIZADO</div>
+  <h1>TCGP INVEST<br>GUIDE</h1>
+  <p>Cartas que mais valorizam sua conta<br>para revenda no Pokémon TCG Pocket</p>
+  <div class="coin-row">💰🃏👑🃏💰</div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('crown',this)"><span>👑</span>CROWN</div>
+  <div class="tab" onclick="showTab('immersive',this)"><span>✨</span>IMERSIV</div>
+  <div class="tab" onclick="showTab('meta',this)"><span>⚔️</span>META</div>
+  <div class="tab" onclick="showTab('strategy',this)"><span>📈</span>STRAT</div>
+  <div class="tab" onclick="showTab('tier',this)"><span>🏆</span>TIER</div>
+</div>
+
+<!-- ===== CROWN ===== -->
+<div id="crown" class="section active">
+  <div class="section-title">👑 RARIDADES CROWN</div>
+  <div class="section-sub">Drop rate: 0.04%–0.16% · Topo absoluto do mercado</div>
+  <div class="gold-tip">
+    <div class="gold-tip-title">⚡ DICA DE OURO</div>
+    <div class="gold-tip-text">Uma conta com <strong>1 carta Crown</strong> vende muito mais rápido e por preço melhor do que uma conta com 10 cartas EX comuns. Guarde seus Pack Points!</div>
+  </div>
+
+  <!-- Mewtwo -->
+  <div class="pcard crown" onclick="toggleCard(this)">
+    <div class="pcard-header">
+      <div class="card-art crown-art">
+        <svg><use href="#card-mewtwo"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Mewtwo ex Gold</div>
+        <div class="badges"><span class="badge crown">👑 Crown</span><span class="badge hot">🔥 HOT</span></div>
+        <div class="pcard-set">Genetic Apex · A1 #286</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">VALOR</div>
+        <div class="val-stars">★★★★★</div>
+        <div class="val-rank">↑ Top #1</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-mewtwo"/></svg></div>
+      <div class="drop-pill">Drop Rate: ~0.04%</div>
+      <div class="expand-desc">Uma das cartas mais <strong>icônicas e desejadas</strong> do jogo. Mewtwo é símbolo da franquia com demanda altíssima entre jogadores competitivos e colecionadores globais.</div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="sl">LIQUIDEZ</div><div class="sv">RÁPIDA</div></div>
+        <div class="stat-box"><div class="sl">DEMANDA</div><div class="sv">MÁXIMA</div></div>
+        <div class="stat-box"><div class="sl">COLEÇÃO</div><div class="sv">Genetic Apex</div></div>
+        <div class="stat-box"><div class="sl">HP</div><div class="sv">200 HP</div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Por que vale:</strong> Ícone absoluto, fundamental em decks Psychic competitivos, procurado globalmente. Máxima liquidez de revenda.</div>
+    </div>
+  </div>
+
+  <!-- Charizard -->
+  <div class="pcard crown" onclick="toggleCard(this)">
+    <div class="pcard-header">
+      <div class="card-art crown-art">
+        <svg><use href="#card-charizard"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Charizard ex Gold</div>
+        <div class="badges"><span class="badge crown">👑 Crown</span><span class="badge hot">🔥 HOT</span></div>
+        <div class="pcard-set">Genetic Apex · A1 #284</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">VALOR</div>
+        <div class="val-stars">★★★★★</div>
+        <div class="val-rank">↑ Top #2</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-charizard"/></svg></div>
+      <div class="drop-pill">Drop Rate: ~0.04%</div>
+      <div class="expand-desc"><strong>Favorito absoluto dos colecionadores</strong>. Liquidez garantida — é o Pokémon mais popular de todos os tempos. Colecionadores pagam prêmio independente do meta.</div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="sl">LIQUIDEZ</div><div class="sv">RÁPIDA</div></div>
+        <div class="stat-box"><div class="sl">PÚBLICO</div><div class="sv">COLEÇÃO</div></div>
+        <div class="stat-box"><div class="sl">COLEÇÃO</div><div class="sv">Genetic Apex</div></div>
+        <div class="stat-box"><div class="sl">HP</div><div class="sv">330 HP</div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Por que vale:</strong> Pokémon mais famoso do mundo. Sempre em alta independente do meta. Segurança de investimento para qualquer conta.</div>
+    </div>
+  </div>
+
+  <!-- Pikachu -->
+  <div class="pcard crown" onclick="toggleCard(this)">
+    <div class="pcard-header">
+      <div class="card-art crown-art">
+        <svg><use href="#card-pikachu"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Pikachu ex Gold</div>
+        <div class="badges"><span class="badge crown">👑 Crown</span><span class="badge meta">⚔️ Comp.</span></div>
+        <div class="pcard-set">Genetic Apex · A1 #285</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">VALOR</div>
+        <div class="val-stars">★★★★★</div>
+        <div class="val-rank">↑ Top #3</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-pikachu"/></svg></div>
+      <div class="drop-pill">Drop Rate: ~0.04%</div>
+      <div class="expand-desc">Valor altíssimo por ser o <strong>mascote oficial da franquia</strong> e peça central em decks agressivos. Procurado tanto por jogadores competitivos quanto por fãs casuais globalmente.</div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="sl">DECK</div><div class="sv">Agressivo</div></div>
+        <div class="stat-box"><div class="sl">APELO</div><div class="sv">GLOBAL</div></div>
+        <div class="stat-box"><div class="sl">COLEÇÃO</div><div class="sv">Genetic Apex</div></div>
+        <div class="stat-box"><div class="sl">HP</div><div class="sv">120 HP</div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Por que vale:</strong> Mascote global da Nintendo/Pokémon. Demanda constante e universal. Decks Pikachu sempre populares no competitivo.</div>
+    </div>
+  </div>
+
+  <!-- Dialga/Palkia/Arceus -->
+  <div class="pcard crown" onclick="toggleCard(this)">
+    <div class="pcard-header">
+      <div class="card-art crown-art">
+        <svg><use href="#card-dialga"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Dialga / Palkia / Arceus ex Gold</div>
+        <div class="badges"><span class="badge crown">👑 Crown</span><span class="badge hot">🔥 HYPE</span></div>
+        <div class="pcard-set">Space-Time Smackdown · A2</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">VALOR</div>
+        <div class="val-stars">★★★★☆</div>
+        <div class="val-rank">↑ Em Alta</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-dialga"/></svg></div>
+      <div class="drop-pill">Drop Rate: ~0.16%</div>
+      <div class="expand-desc">Cartas das coleções <strong>Space-Time Smackdown</strong> e <strong>Triumphant Light</strong>. No hype por serem recentes e difíceis de obter. Pokémon lendários têm apelo especial e duradouro.</div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="sl">COLEÇÃO</div><div class="sv">STS / TL</div></div>
+        <div class="stat-box"><div class="sl">HYPE</div><div class="sv">MÁXIMO</div></div>
+        <div class="stat-box"><div class="sl">LANÇAMENTO</div><div class="sv">Recente</div></div>
+        <div class="stat-box"><div class="sl">HP</div><div class="sv">240 HP</div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Janela:</strong> Novas coleções geram hype elevado. Farm agora enquanto a raridade é alta e a procura está no pico!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== IMERSIVAS ===== -->
+<div id="immersive" class="section">
+  <div class="section-title">✨ CARTAS IMERSIVAS (3★)</div>
+  <div class="section-sub">Arte animada que "expande" · 2º pilar de valor</div>
+
+  <!-- Mew -->
+  <div class="pcard" onclick="toggleCard(this)" style="border-color:rgba(255,105,180,.35);">
+    <div class="pcard-header">
+      <div class="card-art">
+        <svg><use href="#card-mew"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Mew ex Imersiva</div>
+        <div class="badges"><span class="badge rare">✨ 3 Estrelas</span><span class="badge hot">🔥 HOT</span></div>
+        <div class="pcard-set">Genetic Apex · Imersiva</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">VALOR</div>
+        <div class="val-stars">★★★★☆</div>
+        <div class="val-rank">↑ Alto</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-mew"/></svg></div>
+      <div class="expand-desc"><strong>Extremamente valorizada</strong>, especialmente se a conta completou a missão secreta para obtê-la. Arte imersiva com efeito visual único que expande ao toque.</div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="sl">RARIDADE</div><div class="sv">3★ Imersiva</div></div>
+        <div class="stat-box"><div class="sl">MISSÃO</div><div class="sv">Secreta</div></div>
+        <div class="stat-box"><div class="sl">HP</div><div class="sv">150 HP</div></div>
+        <div class="stat-box"><div class="sl">TIPO</div><div class="sv">Psychic</div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Bônus:</strong> Se a conta completou a <strong>missão secreta do Mew</strong>, o valor sobe consideravelmente. Destaque isso no anúncio!</div>
+    </div>
+  </div>
+
+  <!-- Evento 30 anos -->
+  <div class="pcard" onclick="toggleCard(this)" style="border-color:rgba(46,213,115,.45);">
+    <div class="pcard-header">
+      <div class="card-art">
+        <svg><use href="#card-event"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Cartas 30 Anos Pokémon</div>
+        <div class="badges"><span class="badge limited">🟢 LIMITADO</span><span class="badge hot">🔥 IRREPROD.</span></div>
+        <div class="pcard-set">Evento Especial 2026 · Exclusivo</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">VALOR</div>
+        <div class="val-stars">★★★★★</div>
+        <div class="val-rank">↑ ÚNICO</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-event"/></svg></div>
+      <div class="expand-desc">Itens exclusivos do <strong>evento de 30 anos da franquia Pokémon (2026)</strong>. Valor sobe exponencialmente por serem irreproduzíveis — um pedaço da história da franquia.</div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="sl">DISPONÍVEL</div><div class="sv">2026 Apenas</div></div>
+        <div class="stat-box"><div class="sl">RETORNA?</div><div class="sv">NUNCA</div></div>
+        <div class="stat-box"><div class="sl">TIPO</div><div class="sv">Evento</div></div>
+        <div class="stat-box"><div class="sl">PRÊMIO</div><div class="sv">+200%+</div></div>
+      </div>
+      <div class="tip-box" style="border-color:rgba(46,213,115,.35);"><strong>⚠️ ATENÇÃO:</strong> Itens completamente <strong>únicos e irreproduzíveis</strong>. Uma conta com itens do evento 30 anos tem valor especial de mercado.</div>
+    </div>
+  </div>
+
+  <!-- Shiny Charizard -->
+  <div class="pcard" onclick="toggleCard(this)" style="border-color:rgba(0,212,255,.35);">
+    <div class="pcard-header">
+      <div class="card-art">
+        <svg><use href="#card-shiny"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Charizard / Lucario Shiny ★</div>
+        <div class="badges"><span class="badge rare">💎 Shiny</span><span class="badge meta">⭐ Brilhante</span></div>
+        <div class="pcard-set">Shining Revelry · A2b</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">VALOR</div>
+        <div class="val-stars">★★★★☆</div>
+        <div class="val-rank">↑ +Extra</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-shiny"/></svg></div>
+      <div class="expand-desc">Versões brilhantes de <strong>Charizard</strong> e <strong>Lucario</strong> têm prêmio extra na revenda. A expansão Shining Revelry introduziu Pokémon Shiny no TCGP pela primeira vez.</div>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="sl">EXPANSÃO</div><div class="sv">Shining Revelry</div></div>
+        <div class="stat-box"><div class="sl">PRÊMIO</div><div class="sv">+25–40%</div></div>
+        <div class="stat-box"><div class="sl">MELHOR</div><div class="sv">Charizard ★</div></div>
+        <div class="stat-box"><div class="sl">2º MELHOR</div><div class="sv">Lucario ★</div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Combo:</strong> Charizard normal <strong>+</strong> Charizard Shiny na mesma conta praticamente dobra o valor para colecionadores sérios.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== META ===== -->
+<div id="meta" class="section">
+  <div class="section-title">⚔️ CARTAS DE META S-TIER</div>
+  <div class="section-sub">Para compradores que buscam contas prontas para competir</div>
+  <div class="gold-tip">
+    <div class="gold-tip-title">🎯 CONTAS COMPETITIVAS</div>
+    <div class="gold-tip-text">Compradores buscam contas <strong>"prontas"</strong>. Ter <strong>2 cópias</strong> das cartas essenciais é o diferencial que justifica preço premium.</div>
+  </div>
+
+  <!-- Hydreigon/Absol -->
+  <div class="pcard" onclick="toggleCard(this)" style="border-color:rgba(100,50,200,.3);">
+    <div class="pcard-header">
+      <div class="card-art">
+        <svg><use href="#card-hydreigon"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Hydreigon + Mega Absol ex</div>
+        <div class="badges"><span class="badge meta">⚔️ S-Tier</span><span class="badge hot">🏆 Meta #1</span></div>
+        <div class="pcard-set">2 cópias de cada recomendadas</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">META RANK</div>
+        <div class="val-stars" style="font-size:18px;color:var(--accent);">#1</div>
+        <div class="val-rank">↑ Dom.</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-hydreigon"/></svg></div>
+      <div class="expand-desc">Atualmente <strong>dominam o meta</strong> competitivo do TCGP. Contas com 2 cópias de cada são altamente valorizadas por jogadores que querem entrar no competitivo sem meses de farm.</div>
+      <div class="pb-wrap">
+        <div class="pb-labels"><span>Taxa de uso no meta</span><span>78%</span></div>
+        <div class="pb-track"><div class="pb-fill fill-gold" style="width:78%"></div></div>
+      </div>
+      <div class="stats-grid" style="margin-top:10px;">
+        <div class="stat-box"><div class="sl">CÓPIAS</div><div class="sv">2× Cada</div></div>
+        <div class="stat-box"><div class="sl">DECK</div><div class="sv">Dark/Dragon</div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Estratégia:</strong> Deck completo com as trainer cards corretas pode dobrar o preço da conta para compradores focados em torneios.</div>
+    </div>
+  </div>
+
+  <!-- Suicune/Greninja -->
+  <div class="pcard" onclick="toggleCard(this)" style="border-color:rgba(0,150,255,.25);">
+    <div class="pcard-header">
+      <div class="card-art">
+        <svg><use href="#card-suicune"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Suicune ex + Greninja</div>
+        <div class="badges"><span class="badge meta">⚔️ S-Tier</span><span class="badge rare">🌊 Controle</span></div>
+        <div class="pcard-set">2 cópias de cada recomendadas</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">META RANK</div>
+        <div class="val-stars" style="font-size:18px;color:var(--accent);">#2</div>
+        <div class="val-rank stable">→ Estável</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-suicune"/></svg></div>
+      <div class="expand-desc">Essenciais para <strong>decks de controle de energia</strong>. Suicune ex + Greninja é uma das combinações mais eficientes para dominar o ritmo do jogo e vencer torneios.</div>
+      <div class="pb-wrap">
+        <div class="pb-labels"><span>Taxa de uso no meta</span><span>65%</span></div>
+        <div class="pb-track"><div class="pb-fill fill-blue" style="width:65%"></div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Por que vale:</strong> Decks de controle preferidos por jogadores experientes. Muito procurado por competidores sérios que querem vencer torneios.</div>
+    </div>
+  </div>
+
+  <!-- Mega Altaria -->
+  <div class="pcard" onclick="toggleCard(this)" style="border-color:rgba(100,180,255,.25);">
+    <div class="pcard-header">
+      <div class="card-art">
+        <svg><use href="#card-altaria"/></svg>
+        <div class="shimmer"></div>
+      </div>
+      <div class="pcard-info">
+        <div class="pcard-name">Mega Altaria ex</div>
+        <div class="badges"><span class="badge meta">⚔️ S-Tier</span><span class="badge limited">🛡️ Resiliente</span></div>
+        <div class="pcard-set">Mega Rising · A3</div>
+      </div>
+      <div class="pcard-right">
+        <div class="val-label">META RANK</div>
+        <div class="val-stars" style="font-size:18px;color:var(--accent);">#3</div>
+        <div class="val-rank stable">→ Firme</div>
+      </div>
+    </div>
+    <div class="chevron">▼</div>
+    <div class="pcard-expand">
+      <div class="expand-card-big"><svg viewBox="0 0 100 140"><use href="#card-altaria"/></svg></div>
+      <div class="expand-desc">Uma das cartas mais <strong>resilientes do formato atual</strong>. Mega Altaria ex mantém presença consistente no meta há várias semanas — bom investimento de médio prazo.</div>
+      <div class="pb-wrap">
+        <div class="pb-labels"><span>Consistência no meta</span><span>71%</span></div>
+        <div class="pb-track"><div class="pb-fill fill-red" style="width:71%"></div></div>
+      </div>
+      <div class="tip-box"><strong>💡 Estabilidade:</strong> Diferente de cartas que sobem e caem com patches, Mega Altaria mantém posição consistente. Ideal para contas de médio prazo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== STRATEGY ===== -->
+<div id="strategy" class="section">
+  <div class="section-title">📈 ESTRATÉGIAS DE VALOR</div>
+  <div class="section-sub">Como maximizar o preço de revenda da sua conta</div>
+
+  <div class="strat-card">
+    <div class="strat-header">
+      <div class="strat-icon" style="background:linear-gradient(135deg,rgba(255,215,0,.22),rgba(255,165,0,.12));border:1px solid rgba(255,215,0,.35);">⏳</div>
+      <div><div class="strat-name">AMPULHETAS & PACK POINTS</div><div class="strat-sub">MAIOR FATOR DE VALOR</div></div>
+    </div>
+    <div class="strat-desc">Contas com <strong>2.500+ Pack Points</strong> acumulados valem exponencialmente mais. O comprador usa os pontos para resgatar a carta Crown que quiser diretamente.</div>
+    <div class="pb-wrap"><div class="pb-labels"><span>Pack Points ideais para revenda</span><span>2500+</span></div><div class="pb-track"><div class="pb-fill fill-gold" data-w="90" style="width:0%"></div></div></div>
+  </div>
+
+  <div class="strat-card">
+    <div class="strat-header">
+      <div class="strat-icon" style="background:linear-gradient(135deg,rgba(0,212,255,.18),rgba(123,47,255,.18));border:1px solid rgba(0,212,255,.3);">🏅</div>
+      <div><div class="strat-name">MASTER SET COMPLETO</div><div class="strat-sub">COLECIONADORES PAGAM PREMIUM</div></div>
+    </div>
+    <div class="strat-desc">Ter o emblema <strong>"Master Set"</strong> de Genetic Apex aumenta o valor para colecionadores que querem a coleção 100% completa sem farmar do zero.</div>
+    <div class="pb-wrap"><div class="pb-labels"><span>Impacto estimado no preço</span><span>+40–80%</span></div><div class="pb-track"><div class="pb-fill fill-blue" data-w="70" style="width:0%"></div></div></div>
+  </div>
+
+  <div class="strat-card">
+    <div class="strat-header">
+      <div class="strat-icon" style="background:linear-gradient(135deg,rgba(255,71,87,.18),rgba(255,165,0,.18));border:1px solid rgba(255,71,87,.3);">💎</div>
+      <div><div class="strat-name">COMBO SHINY + NORMAL</div><div class="strat-sub">PRÊMIO EXTRA NA REVENDA</div></div>
+    </div>
+    <div class="strat-desc">Ter a versão normal <strong>+</strong> Shiny do mesmo Pokémon (especialmente Charizard) quase dobra o apelo para colecionadores sérios. Diferencial poderoso no anúncio.</div>
+    <div class="pb-wrap"><div class="pb-labels"><span>Prêmio estimado combo Shiny</span><span>+25–40%</span></div><div class="pb-track"><div class="pb-fill fill-red" data-w="38" style="width:0%"></div></div></div>
+  </div>
+
+  <div class="strat-card" style="border-color:rgba(46,213,115,.25);">
+    <div class="strat-header">
+      <div class="strat-icon" style="background:linear-gradient(135deg,rgba(46,213,115,.18),rgba(0,200,100,.1));border:1px solid rgba(46,213,115,.35);">🚫</div>
+      <div><div class="strat-name">NÃO GASTE POINTS EM COMUNS</div><div class="strat-sub">REGRA DE OURO DO FARM</div></div>
+    </div>
+    <div class="strat-desc">Evite gastar Pack Points em cartas comuns. Guarde para resgatar uma Crown ou Imersiva de evento. Uma conta com 1–2 cartas Gold vende muito mais rápido e por preço bem maior.</div>
+    <div class="pb-wrap"><div class="pb-labels"><span>Diferença Crown vs EX comuns</span><span>+300%</span></div><div class="pb-track"><div class="pb-fill fill-green" data-w="95" style="width:0%"></div></div></div>
+  </div>
+</div>
+
+<!-- ===== TIER ===== -->
+<div id="tier" class="section">
+  <div class="section-title">🏆 TIER LIST DE REVENDA</div>
+  <div class="section-sub">Rankeadas por potencial de valorizar sua conta</div>
+
+  <div class="tier-row tier-s"><div class="tier-lbl">S</div><div class="tier-chips"><div class="chip gold">👑 Mewtwo ex Gold</div><div class="chip gold">👑 Charizard ex Gold</div><div class="chip gold">👑 Pikachu ex Gold</div><div class="chip">🎂 Evento 30 Anos</div></div></div>
+  <div class="tier-row tier-a"><div class="tier-lbl">A</div><div class="tier-chips"><div class="chip">✨ Mew ex Imersiva</div><div class="chip gold">👑 Arceus ex Gold</div><div class="chip gold">👑 Dialga ex Gold</div><div class="chip">💎 Charizard Shiny</div></div></div>
+  <div class="tier-row tier-b"><div class="tier-lbl">B</div><div class="tier-chips"><div class="chip">⚔️ Hydreigon 2×</div><div class="chip">⚔️ Mega Absol ex 2×</div><div class="chip">⚔️ Mega Altaria ex</div><div class="chip">💎 Lucario Shiny</div></div></div>
+  <div class="tier-row tier-c"><div class="tier-lbl">C</div><div class="tier-chips"><div class="chip">🌊 Suicune ex 2×</div><div class="chip">🌊 Greninja 2×</div><div class="chip">⏳ 2500+ Pack Pts</div><div class="chip">🏅 Master Set</div></div></div>
+
+  <div style="margin-top:22px;">
+    <div class="section-title" style="margin-bottom:12px;">📊 FATORES DE VALOR</div>
+    <div style="background:var(--bg2);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.07);">
+      <div class="summary-row"><div class="sr-icon">👑</div><div><div class="sr-lbl" style="color:var(--gold);">CROWN CARDS</div><div class="sr-desc">Principal fator de liquidez rápida</div></div><div class="sr-stars">★★★★★</div></div>
+      <div class="summary-row"><div class="sr-icon">⏳</div><div><div class="sr-lbl" style="color:var(--accent);">PACK POINTS</div><div class="sr-desc">2500+ pontos = valor máximo</div></div><div class="sr-stars">★★★★★</div></div>
+      <div class="summary-row"><div class="sr-icon">🎂</div><div><div class="sr-lbl" style="color:var(--green);">ITENS LIMITADOS</div><div class="sr-desc">Evento 30 anos irreproduzível</div></div><div class="sr-stars">★★★★★</div></div>
+      <div class="summary-row"><div class="sr-icon">✨</div><div><div class="sr-lbl" style="color:#B57BFF;">IMERSIVAS</div><div class="sr-desc">Arte especial animada</div></div><div class="sr-stars" style="color:var(--gold);">★★★★☆</div></div>
+      <div class="summary-row"><div class="sr-icon">⚔️</div><div><div class="sr-lbl" style="color:var(--red);">META COMPETITIVO</div><div class="sr-desc">Set completo para torneios</div></div><div class="sr-stars" style="color:var(--gold);">★★★★☆</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="scroll-hint">▲ Toque nas cartas para ver detalhes ▲</div>
+<div class="footer">TCGP INVEST GUIDE 2026 · Pokémon TCG Pocket<br>Arte das cartas ilustrada · Conteúdo educacional</div>
+
+<script>
+function showTab(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top:60,behavior:'smooth'});
+  if(id==='strategy') setTimeout(animateBars, 150);
+}
+
+function toggleCard(card){
+  const isOpen=card.classList.contains('open');
+  card.closest('.section').querySelectorAll('.pcard').forEach(c=>c.classList.remove('open'));
+  if(!isOpen) card.classList.add('open');
+}
+
+function animateBars(){
+  document.querySelectorAll('#strategy .pb-fill').forEach(bar=>{
+    const w=bar.dataset.w;
+    bar.style.width='0%';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{bar.style.width=w+'%';}));
+  });
+}
+</script>
+</body>
+</html>
